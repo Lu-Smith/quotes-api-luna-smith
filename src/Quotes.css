@@ -7,7 +7,7 @@
 
 .Quotes section {
   max-width: 600px;
-  background: #fcf8f3;
+  background: white;
   border-radius: 10px;
   margin: 20px auto;
   padding: 30px 0;
@@ -29,4 +29,18 @@
   background: #6e7da2;
   color: white;
   cursor: pointer;
+}
+
+.Quotes .imageoff {
+  background-image: url("./lightbulboff.png");
+  height: 570px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.Quotes .imageon {
+  background-image: url("./lightbulbon.png");
+  height: 570px;
+  width: 500px;
+  margin: 0 auto;
 }

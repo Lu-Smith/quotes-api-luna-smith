@@ -13,7 +13,7 @@ export default function SecondQuote(props) {
     );
   } else {
     return (
-      <div>
+      <div className="SecondQuote">
         In three words I can sum up everything I've learned about life - It goes
         on. - Robert Frost
       </div>

@@ -5,6 +5,7 @@ import InputQuote from "./InputQuote";
 import SecondQuote from "./SecondQuote";
 
 export default function Quotes() {
+  let [image, setImage] = useState("off");
   const [randomQuote, setRandomeQuote] = useState(
     "Don't ruin the present with the ruined past. - Ellen Gilchrist"
   );
@@ -33,7 +34,12 @@ export default function Quotes() {
         console.error(error);
       });
   };
-
+  function lightOn(event) {
+    setImage("on");
+  }
+  function lightOff(event) {
+    setImage("off");
+  }
   const getRandomQuote = () => {
     const options = {
       method: "GET",
@@ -53,16 +59,33 @@ export default function Quotes() {
         console.error(error);
       });
   };
-  return (
-    <div className="Quotes">
-      <section>
-        <button onClick={getQuote}> Motivation quote</button>
-        <InputQuote quote={randomQuote} />
-      </section>
-      <section>
-        <button onClick={getRandomQuote}> Random quote</button>
-        <SecondQuote secondQuote={secondQuote} />
-      </section>
-    </div>
-  );
+  if (image === "off") {
+    return (
+      <div className="Quotes">
+        <section>
+          <button onClick={getQuote}>Motivation</button>
+          <InputQuote quote={randomQuote} />
+        </section>
+        <section>
+          <button onClick={getRandomQuote}>Random</button>
+          <SecondQuote secondQuote={secondQuote} />
+        </section>
+        <div className="imageoff" onClick={lightOn}></div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="Quotes">
+        <section>
+          <button onClick={getQuote}>Motivation</button>
+          <InputQuote quote={randomQuote} />
+        </section>
+        <section>
+          <button onClick={getRandomQuote}>Random</button>
+          <SecondQuote secondQuote={secondQuote} />
+        </section>
+        <div className="imageon" onClick={lightOff}></div>
+      </div>
+    );
+  }
 }
