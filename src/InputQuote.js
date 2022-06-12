@@ -1,6 +1,6 @@
 import React from "react";
+import "./InputQuote.css";
 
 export default function InputQuote(props) {
-  console.log(props.quote);
   return <div className="InputQuote">{props.quote}</div>;
 }

@@ -27,7 +27,6 @@ export default function Quotes() {
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
         setRandomeQuote(response.data);
       })
       .catch(function (error) {
@@ -48,7 +47,6 @@ export default function Quotes() {
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
         setSecondQuote(response.data);
       })
       .catch(function (error) {
@@ -57,10 +55,14 @@ export default function Quotes() {
   };
   return (
     <div className="Quotes">
-      <button onClick={getQuote}> Motivation Quote</button>
-      <InputQuote quote={randomQuote} />
-      <button onClick={getRandomQuote}> Random Quote</button>
-      <SecondQuote secondQuote={secondQuote} />
+      <section>
+        <button onClick={getQuote}> Motivation quote</button>
+        <InputQuote quote={randomQuote} />
+      </section>
+      <section>
+        <button onClick={getRandomQuote}> Random quote</button>
+        <SecondQuote secondQuote={secondQuote} />
+      </section>
     </div>
   );
 }
