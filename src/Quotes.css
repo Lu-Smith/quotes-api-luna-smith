@@ -46,3 +46,24 @@
   width: 500px;
   margin: 0 auto;
 }
+
+@media (max-width: 700px) {
+  .Quotes button {
+    padding: 8px 25px;
+    border-radius: 4px;
+    font-size: 18px;
+  }
+  .Quotes .imageoff {
+    background-image: url("./lightbulboffSmall.png");
+    height: 380px;
+    position: relative;
+    right: 15px;
+  }
+
+  .Quotes .imageon {
+    background-image: url("./lightbulbonSmall.png");
+    height: 380px;
+    position: relative;
+    right: 15px;
+  }
+}
